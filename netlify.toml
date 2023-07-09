@@ -1,3 +1,2 @@
 [build]
-  publish = "out"
   command = "NODE_OPTIONS='--openssl-legacy-provider' next build"
