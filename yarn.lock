@@ -352,6 +352,11 @@
   "resolved" "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-3.6.0.tgz"
   "version" "3.6.0"
 
+"@emailjs/browser@^3.11.0":
+  "integrity" "sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA=="
+  "resolved" "https://registry.npmjs.org/@emailjs/browser/-/browser-3.11.0.tgz"
+  "version" "3.11.0"
+
 "@emotion/hash@^0.8.0":
   "integrity" "sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow=="
   "resolved" "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"

@@ -5,6 +5,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-scroll';
 import { Button, Card, Input, Modal } from 'antd';
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import emailjs from '@emailjs/browser';
 
 import allStates from "../data/allstates.json";
 import geoURL from "../data/geoURL.json";
@@ -19,7 +20,7 @@ import Features from '../components/Features';
 import LazyShow from '../components/LazyShow';
 import Product from '../components/Product';
 
-
+emailjs.init("user_jzbkzTRjGnVizvlvvPsZG");
 
 const App = () => {
   const { navigation, callToAction } = config;
@@ -98,8 +99,7 @@ const App = () => {
             </div>
           </nav>
         </div>
-
-        <Modal title="Post my event" footer={<Button type="primary" disabled={!email.includes("@")} onClick={(e) => {alert("Sent to " + email + ".edu");setEmail("");closeModal()}}>Send</Button>} open={isDialogOpen} onOk={closeModal} onCancel={closeModal}>
+        <Modal title="Post my event" footer={<Button type="primary" disabled={!email.includes("@")} onClick={(e) => {emailjs.send("service_o3aqz0r","template_6zembhb", {'to_email': email + ".edu"});alert("Sent to " + email + ".edu");setEmail("");closeModal()}}>Send</Button>} open={isDialogOpen} onOk={closeModal} onCancel={closeModal}>
           <p>We will send you a link to a Google form to your email. Once you fill out the form, your event will be automatically popped up in this site. To verify that you are academic researchers, you should provide an emaill address ending with .edu</p>
           <br/>
           <Input style={{width:"200px"}} addonAfter=".edu" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="your.email@uni" />
