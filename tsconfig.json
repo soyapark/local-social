@@ -5,7 +5,7 @@
     "resolveJsonModule": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "strict": true,
+    "strict": false,
     "alwaysStrict": false,
     "strictNullChecks": false,
     "noUncheckedIndexedAccess": true,
@@ -28,7 +28,12 @@
     "jsx": "preserve",
     "noEmit": true,
     "isolatedModules": true,
-    "incremental": true
+    "incremental": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ]
   },
   "exclude": [
     "./out/**/*",

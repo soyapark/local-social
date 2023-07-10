@@ -4,7 +4,7 @@ import config from '../config/index.json';
 
 const Features = () => {
   const { features } = config;
-  const { title, subtitle, description, items: featuresList } = features;
+  const { title, subtitle, description } = features;
   return (
     <div className={`py-12 bg-background`} id="how-to">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

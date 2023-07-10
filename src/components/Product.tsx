@@ -24,7 +24,8 @@ const Product = () => {
         </h1>
         <Divider />
         <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+          There is an opportunity to create a new model that incorporates the best elements of both in-person and virtual conferences. We propose an alternative: locally-grouped "unconferences". Unconferences are gatherings that combat the hierarchical structure of standard conference design, by minimizing formal speeches and emphasizing informal connections through participant-driven content. 
+
           </p>
 
         {product.items.map((feature) => (
