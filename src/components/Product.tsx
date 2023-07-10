@@ -8,7 +8,7 @@ const Product = () => {
   const [firstItem, secondItem] = product.items;
 
   return (
-    <section className={`bg-background py-8`} id="product">
+    <section className={`bg-background py-8`} id="what-is">
       <div className={`container max-w-5xl mx-auto m-8`}>
         <h1
           className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
@@ -23,42 +23,31 @@ const Product = () => {
           ))}
         </h1>
         <Divider />
-        <div className={`flex flex-wrap`}>
-          <div className={`w-5/6 sm:w-1/2 p-6 mt-20`}>
-            <h3
-              className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
-            >
-              {firstItem?.title}
-            </h3>
-            <p className={`text-gray-600`}>{firstItem?.description}</p>
-          </div>
-          <div className={`w-full sm:w-1/2 p-6`}>
-            <img
-              className="h-6/6"
-              src={firstItem?.img}
-              alt={firstItem?.title}
-            />
-          </div>
-        </div>
-        <div className={`flex flex-wrap flex-col-reverse sm:flex-row`}>
-          <div className={`w-full sm:w-1/2 p-6`}>
-            <img
-              className="h-6/6"
-              src={secondItem?.img}
-              alt={secondItem?.title}
-            />
-          </div>
-          <div className={`w-full sm:w-1/2 p-6 mt-20`}>
-            <div className={`align-middle`}>
-              <h3
-                className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
-              >
-                {secondItem?.title}
-              </h3>
-              <p className={`text-gray-600 mb-8`}>{secondItem?.description}</p>
-            </div>
-          </div>
-        </div>
+        <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+          </p>
+
+        {product.items.map((feature) => (
+              <div key={feature.name} className="relative" style={{marginTop: "30px"}}>
+                <dt>
+                  <div
+                    className={`absolute flex items-center justify-center h-12 w-12 rounded-md bg-background text-tertiary border-primary border-4`}
+                  >
+                    <img
+                      className={`inline-block h-6 w-6 rounded-full`}
+                      src={feature.icon}
+                      alt={feature.name}
+                    />
+                  </div>
+                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                    {feature.name}
+                  </p>
+                </dt>
+                <dd className="mt-2 ml-16 text-base text-gray-500">
+                  {feature.description}
+                </dd>
+              </div>
+            ))}
       </div>
     </section>
   );
