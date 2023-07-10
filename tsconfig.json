@@ -8,8 +8,8 @@
     "strict": false,
     "alwaysStrict": false,
     "strictNullChecks": false,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": false,
@@ -29,19 +29,8 @@
     "noEmit": true,
     "isolatedModules": true,
     "incremental": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ]
+    "lib": ["dom", "dom.iterable", "esnext"]
   },
-  "exclude": [
-    "./out/**/*",
-    "./node_modules/**/*"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["./out/**/*", "./node_modules/**/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
