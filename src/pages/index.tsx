@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-scroll';
-import { Button, Card } from 'antd';
+import { Button, Card, Input, Modal } from 'antd';
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 
 import allStates from "../data/allstates.json";
@@ -26,11 +26,21 @@ const App = () => {
   const [highlightedStates, setHighlightedStates] = useState([]);
   const [events, setEvents] = useState([{"title": "Southeast gathering @ Emory, Nov 2023", participants: ["GA", "FL"]}, {"title": "Northesast gathering @ NYC, Nov 2022", "participants": ["MA", "NY", "NJ", "PA", "GA"]}]);
   const [selectedEvent, setSelectedEvent] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     // load all the events
 
   }, []);
+
+  function closeModal() {
+    setIsDialogOpen(false)
+  }
+
+  function openModal() {
+    setIsDialogOpen(true)
+  }
 
   const selectNewEvent = (index) => {
     setSelectedEvent(index);
@@ -89,7 +99,11 @@ const App = () => {
           </nav>
         </div>
 
-        
+        <Modal title="Post my event" footer={<Button type="primary" disabled={!email.includes("@")} onClick={(e) => {alert("Sent to " + email + ".edu");setEmail("");closeModal()}}>Send</Button>} open={isDialogOpen} onOk={closeModal} onCancel={closeModal}>
+          <p>We will send you a link to a Google form to your email. Once you fill out the form, your event will be automatically popped up in this site. To verify that you are academic researchers, you should provide an emaill address ending with .edu</p>
+          <br/>
+          <Input style={{width:"200px"}} addonAfter=".edu" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="your.email@uni" />
+        </Modal>
 
         <Transition
           as={Fragment}
@@ -162,7 +176,7 @@ const App = () => {
           )}
         </p>
         <Button size="large" type="primary" href="#how-to" style={{backgroundColor: "rgba(236, 71, 85, 1)", marginRight:"10px"}}>Organize in my area</Button>
-        <Button size="large" href="">Post my event</Button>
+        <Button size="large" onClick={(e) => openModal()}>Post my event</Button>
 
       </div>
     </main>
