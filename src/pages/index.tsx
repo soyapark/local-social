@@ -14,20 +14,15 @@ import logo from "../images/logo.png";
 
 
 import About from '../components/About';
-import Analytics from '../components/Analytics';
 import Canvas from '../components/Canvas';
 import Features from '../components/Features';
-import Header from '../components/Header';
 import LazyShow from '../components/LazyShow';
-import MainHero from '../components/MainHero';
-import MainHeroImage from '../components/MainHeroImage';
-import Pricing from '../components/Pricing';
 import Product from '../components/Product';
 
 
 
 const App = () => {
-  const { navigation, company, callToAction } = config;
+  const { navigation, callToAction } = config;
   const [highlightedStates, setHighlightedStates] = useState([]);
   const [events, setEvents] = useState([{"title": "Southeast gathering @ Emory, Nov 2023", participants: ["GA", "FL"]}, {"title": "Northesast gathering @ NYC, Nov 2022", "participants": ["MA", "NY", "NJ", "PA", "GA"]}]);
   const [selectedEvent, setSelectedEvent] = useState(0);

@@ -13,7 +13,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
     "target": "es5",
