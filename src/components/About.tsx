@@ -4,7 +4,7 @@ import config from '../config/index.json';
 import logo from "../images/logo.png";
 
 const About = () => {
-  const { company, about } = config;
+  const { about } = config;
   const { socialMedia, sections } = about;
 
   return (
