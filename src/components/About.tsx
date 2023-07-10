@@ -1,10 +1,10 @@
 import React from 'react';
 
 import config from '../config/index.json';
+import logo from "../images/logo.png";
 
 const About = () => {
   const { company, about } = config;
-  const { logo, name: companyName } = company;
   const { socialMedia, sections } = about;
 
   return (
@@ -14,7 +14,7 @@ const About = () => {
     >
       <div className="flex flex-col items-center justify-center">
         <div>
-          <img src={logo} alt={companyName} className="w-16 h-16" />
+          <img src={logo} alt={"logo"} className="w-16 h-16" />
         </div>
         <div className="flex flex-wrap sm:gap-10 gap-8 items-center justify-center mt-4 h-12">
           {sections.map((section, index) => (
