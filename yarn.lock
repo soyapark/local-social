@@ -594,6 +594,43 @@
   "resolved" "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.0.8.tgz"
   "version" "1.0.8"
 
+"@types/d3-color@^2":
+  "integrity" "sha512-+0EtEjBfKEDtH9Rk3u3kLOUXM5F+iZK+WvASPb0MhIZl8J8NUvGeZRwKCXl+P3HkYx5TdU4YtcibpqHkSR9n7w=="
+  "resolved" "https://registry.npmjs.org/@types/d3-color/-/d3-color-2.0.3.tgz"
+  "version" "2.0.3"
+
+"@types/d3-geo@^2":
+  "integrity" "sha512-kP0LcPVN6P/42hmFt0kZm93YTscfawZo6tioL9y0Ya2l5rxaGoYrIG4zee+yJoK9cLTOc8E8S5ExqTEYVwjIkw=="
+  "resolved" "https://registry.npmjs.org/@types/d3-geo/-/d3-geo-2.0.4.tgz"
+  "version" "2.0.4"
+  dependencies:
+    "@types/geojson" "*"
+
+"@types/d3-interpolate@^2":
+  "integrity" "sha512-lElyqlUfIPyWG/cD475vl6msPL4aMU7eJvx1//Q177L8mdXoVPFl1djIESF2FKnc0NyaHvQlJpWwKJYwAhUoCw=="
+  "resolved" "https://registry.npmjs.org/@types/d3-interpolate/-/d3-interpolate-2.0.2.tgz"
+  "version" "2.0.2"
+  dependencies:
+    "@types/d3-color" "^2"
+
+"@types/d3-selection@^2":
+  "integrity" "sha512-3mhtPnGE+c71rl/T5HMy+ykg7migAZ4T6gzU0HxpgBFKcasBrSnwRbYV1/UZR6o5fkpySxhWxAhd7yhjj8jL7g=="
+  "resolved" "https://registry.npmjs.org/@types/d3-selection/-/d3-selection-2.0.1.tgz"
+  "version" "2.0.1"
+
+"@types/d3-zoom@^2":
+  "integrity" "sha512-2AiNBuLGScHDORzjsLnnZTlVR+wMVIHWasAGkM6UQI8wKRhpix5njRfO+yysx1FULgaNYV1cby3TttVRo/ZT9A=="
+  "resolved" "https://registry.npmjs.org/@types/d3-zoom/-/d3-zoom-2.0.4.tgz"
+  "version" "2.0.4"
+  dependencies:
+    "@types/d3-interpolate" "^2"
+    "@types/d3-selection" "^2"
+
+"@types/geojson@*":
+  "integrity" "sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA=="
+  "resolved" "https://registry.npmjs.org/@types/geojson/-/geojson-7946.0.10.tgz"
+  "version" "7946.0.10"
+
 "@types/json-schema@^7.0.7":
   "integrity" "sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ=="
   "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz"
@@ -619,7 +656,17 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.4.tgz"
   "version" "15.7.4"
 
-"@types/react@^17.0.33":
+"@types/react-simple-maps@^3.0.0":
+  "integrity" "sha512-yj1gBs7R+yq0OaHzQgwcRvzaHQxNBny1myl7NaICeBjToTG2sQK2Tq18lflojtLTm8vOLeFuA3EaYW+L8SkrAQ=="
+  "resolved" "https://registry.npmjs.org/@types/react-simple-maps/-/react-simple-maps-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "@types/d3-geo" "^2"
+    "@types/d3-zoom" "^2"
+    "@types/geojson" "*"
+    "@types/react" "*"
+
+"@types/react@*", "@types/react@^17.0.33":
   "integrity" "sha512-pLWntxXpDPaU+RTAuSGWGSEL2FRTNyRQOjSWDke/rxRg14ncsZvx8AKWMWZqvc1UOaJIAoObdZhAWvRaHFi5rw=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.33.tgz"
   "version" "17.0.33"
@@ -5087,10 +5134,10 @@
   "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.7.1.tgz"
   "version" "0.7.1"
 
-"typescript@^4.4.4", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.3.1":
-  "integrity" "sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.4.4.tgz"
-  "version" "4.4.4"
+"typescript@^5.0.4", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.3.1":
+  "integrity" "sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-5.1.6.tgz"
+  "version" "5.1.6"
 
 "unbox-primitive@^1.0.1":
   "integrity" "sha512-tZU/3NqK3dA5gpE1KtyiJUrEB0lxnGkMFHptJ7q6ewdZ8s12QrODwNbhIJStmJkd1QDXa1NRA8aF2A1zk/Ypyw=="
