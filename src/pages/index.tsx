@@ -25,13 +25,13 @@ emailjs.init("user_jzbkzTRjGnVizvlvvPsZG");
 const App = () => {
   const { navigation, callToAction } = config;
   const [highlightedStates, setHighlightedStates] = useState([]);
-  const [events, setEvents] = useState([{"title": "Southeast gathering @ Emory, Nov 2023", "date": "2023-11-31", "organizers": "Soya Park", participants: ["GA", "FL"]}, {"title": "Northesast gathering @ NYC, Nov 2022", "date": "2022-11-31", "organizers": "Rosanna Bellini, Andrés Monroy-Hernández and Jérémie Lumbroso", "participants": ["MA", "NY", "NJ", "PA", "GA"]}]);
+  const [events, setEvents] = useState([{"title": "Southeast gathering @ Emory, Nov 2023", "date": "2023-11-31", "agenda": "", "organizers": "Soya Park", participants: ["GA", "FL"], to_improve: "-"}, {"title": "Northesast gathering @ NYC, Nov 2022", "date": "2022-11-31", "agenda": "https://docs.google.com/document/d/1PhpaJmWYQy96BmstJe0b0WlxJTt-uBfb4moLvtTKu1k/edit?usp=sharing", "organizers": "Rosanna Bellini, Andrés Monroy-Hernández and Jérémie Lumbroso", "participants": ["MA", "NY", "NJ", "PA", "GA"], to_improve: "While participants found the sessions were overall engaging and interesting, the nature of panel sessions sometimes unfairly distribute time between panels. Chairs can ensure each panelist does not go over their assigned time. It might be also worth to  reduce the size of panelists per panel or try other forms of dissemination other than panel sessions."}]);
   const [selectedEvent, setSelectedEvent] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [email, setEmail] = useState("");
 
   useEffect(() => {
-    // load all the events
+    // load all the events from firebase 
 
   }, []);
 
@@ -170,9 +170,9 @@ const App = () => {
         <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
           {events.map((event, i) => 
             <Card title={event.title} extra={new Date().toISOString().slice(0, 10) <= event.date && <Tag color="magenta">Upcoming</Tag>} onClick={(e) => selectNewEvent(i)} className={i == selectedEvent ? "selected-event":""} style={{ marginBottom: "30px" }}>
-              <p>Organized by {event.organizers}</p>
-              <p>Agenda: </p>
-              <p>Things to improve: </p>
+              <p style={{color: "#999"}}>Organized by {event.organizers}</p>
+              <p>{event.agenda && <a href={event.agenda} target="_blank" rel="noopener noreferrer">Agenda</a>}</p>
+              {new Date().toISOString().slice(0, 10) > event.date && <p>Things to improve: {event.to_improve}</p>}
             </Card>
           )}
         </p>
