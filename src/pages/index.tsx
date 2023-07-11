@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-scroll';
-import { Button, Card, Input, Modal } from 'antd';
+import { Button, Card, Input, Modal, Tag } from 'antd';
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import emailjs from '@emailjs/browser';
 
@@ -25,7 +25,7 @@ emailjs.init("user_jzbkzTRjGnVizvlvvPsZG");
 const App = () => {
   const { navigation, callToAction } = config;
   const [highlightedStates, setHighlightedStates] = useState([]);
-  const [events, setEvents] = useState([{"title": "Southeast gathering @ Emory, Nov 2023", participants: ["GA", "FL"]}, {"title": "Northesast gathering @ NYC, Nov 2022", "participants": ["MA", "NY", "NJ", "PA", "GA"]}]);
+  const [events, setEvents] = useState([{"title": "Southeast gathering @ Emory, Nov 2023", "date": "2023-11-31", "organizers": "Soya Park", participants: ["GA", "FL"]}, {"title": "Northesast gathering @ NYC, Nov 2022", "date": "2022-11-31", "organizers": "Rosanna Bellini, Andrés Monroy-Hernández and Jérémie Lumbroso", "participants": ["MA", "NY", "NJ", "PA", "GA"]}]);
   const [selectedEvent, setSelectedEvent] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -99,7 +99,7 @@ const App = () => {
             </div>
           </nav>
         </div>
-        <Modal title="Post my event" footer={<Button type="primary" disabled={!email.includes("@")} onClick={(e) => {emailjs.send("service_o3aqz0r","template_6zembhb", {'to_email': email + ".edu"});alert("Sent to " + email + ".edu");setEmail("");closeModal()}}>Send</Button>} open={isDialogOpen} onOk={closeModal} onCancel={closeModal}>
+        <Modal title="Post my event" footer={<Button type="primary" disabled={!email.includes("@")} onClick={(e) => {emailjs.send("service_o3aqz0r","template_6zembhb", {'to_email': email + ".edu"});alert("Sent! Check your inbox " + email + ".edu");setEmail("");closeModal()}}>Send</Button>} open={isDialogOpen} onOk={closeModal} onCancel={closeModal}>
           <p>We will send you a link to a Google form to your email. Once you fill out the form, your event will be automatically popped up in this site. To verify that you are academic researchers, you should provide an emaill address ending with .edu</p>
           <br/>
           <Input style={{width:"200px"}} addonAfter=".edu" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="your.email@uni" />
@@ -169,8 +169,9 @@ const App = () => {
         </h1>
         <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
           {events.map((event, i) => 
-            <Card title={event.title} onClick={(e) => selectNewEvent(i)} className={i == selectedEvent ? "selected-event":""} extra={<a href="#"></a>} style={{ marginBottom: "30px" }}>
-              <p>Organizer: </p>
+            <Card title={event.title} extra={new Date().toISOString().slice(0, 10) <= event.date && <Tag color="magenta">Upcoming</Tag>} onClick={(e) => selectNewEvent(i)} className={i == selectedEvent ? "selected-event":""} style={{ marginBottom: "30px" }}>
+              <p>Organized by {event.organizers}</p>
+              <p>Agenda: </p>
               <p>Things to improve: </p>
             </Card>
           )}
