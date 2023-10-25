@@ -38,13 +38,13 @@ Built-in feature from Next.js:
 ```
 git clone https://github.com/issaafalkattan/react-landing-page-template-2021.git
 cd react-landing-page-template-2021
-yarn
+npm
 ```
 
 Then, you can run locally in development mode with live reload:
 
 ```
-yarn dev
+npm run dev
 ```
 
 Open <http://localhost:3000> with your favorite browser to see your project.

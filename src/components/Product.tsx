@@ -49,6 +49,10 @@ const Product = () => {
                 </dd>
               </div>
             ))}
+            <br/><br/>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Read more about it from our recent Interactions article: <a target="_blank" rel="noopener noreferrer" href="https://interactions.acm.org/archive/view/september-october-2023/the-future-of-conferences-is-unconferences-exploring-a-decentralized-network-of-regional-meetups?doi=10.1145%2F3612939">The Future of Conferences Is Unconferences: Exploring a Decentralized Network of Regional Meetups</a> 
+            </p>
       </div>
     </section>
   );
