@@ -26,7 +26,7 @@ const App = () => {
   const { navigation, callToAction } = config;
   const [highlightedStates, setHighlightedStates] = useState([]);
   const [events, setEvents] = useState([
-    {"title": "Southeast gathering @ Atlanta, Apr 2024", "date": "2024-04-02", "agenda": "", "organizers": "", participants: ["GA", "NC"], to_improve: "-"},
+    {"title": "Southeast gathering @ Atlanta, Apr 2024", "date": "2024-04-02", "agenda": "", "organizers": "Camille Harris, Cori Faklaris, Darley Sackitey, Grace Barkhuff, Raj Sanjay Shah, Shravika Mittal", participants: ["GA", "NC"], to_improve: "-"},
     {"title": "Southeast gathering @ Atlanta, Nov 2023", "date": "2023-11-17", "agenda": "https://docs.google.com/document/d/1oos9HkOsB2xTvXtNrH_2OXjo5ks41lcTBFy1toBosxI/edit?usp=sharing", "organizers": "Soya Park, Chinmay Kulkarni and Richmond Wong", participants: ["CA", "GA", "NC", "IL"], to_improve: "-"}, 
     {"title": "Northesast gathering @ NYC, Nov 2022", "date": "2022-11-31", "agenda": "https://docs.google.com/document/d/1PhpaJmWYQy96BmstJe0b0WlxJTt-uBfb4moLvtTKu1k/edit?usp=sharing", "organizers": "Rosanna Bellini, Andrés Monroy-Hernández and Jérémie Lumbroso", "participants": ["MA", "NY", "NJ", "PA", "GA", "NC"], to_improve: "While participants found the sessions were overall engaging and interesting, the nature of panel sessions sometimes unfairly distribute time between panelists. Chairs can ensure each panelist does not go over their assigned time. It might be also worth to  reduce the size of panelists per panel or try other forms of dissemination other than panel sessions."}]);
   const [selectedEvent, setSelectedEvent] = useState(0);
