@@ -35,7 +35,7 @@ const Features = () => {
                 3. Scout for where to host the event. The event does not have to happen at the home institute of the organizers, but somewhere convinient and accessible. Contact some respondents and ask them if they can get a room and snacks for coffee breaks. 
               </li>
               <li>
-                4. Plan agenda. Now this is the fun part! You have complete wiggle room to customize the event as you wish. You can tweak previous event. Copy this template: <a href="https://docs.google.com/document/d/1PhpaJmWYQy96BmstJe0b0WlxJTt-uBfb4moLvtTKu1k/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Link to a Google Doc</a>. We urge you to include a brief townhall in your event and share very very short summary of it, so the next organizer can improve up on your event. 
+                 4. Plan agenda using <a href="https://local-planner.netlify.app" target="_blank" rel="noopener noreferrer">our recommender tool</a>. Now this is the fun part! You have complete wiggle room to customize the event as you wish. You can tweak previous event. {/*Copy this template: <a href="https://docs.google.com/document/d/1PhpaJmWYQy96BmstJe0b0WlxJTt-uBfb4moLvtTKu1k/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Link to a Google Doc</a>.*/} We urge you to include a brief townhall in your event and share very very short summary of it, so the next organizer can improve up on your event.  
               </li>
               <li>
                 5. Have fun at the event :)  
