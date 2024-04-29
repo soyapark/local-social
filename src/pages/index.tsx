@@ -26,10 +26,11 @@ const App = () => {
   const { navigation, callToAction } = config;
   const [highlightedStates, setHighlightedStates] = useState([]);
   const [events, setEvents] = useState([
+    {"title": "Southeast CSCW @ Atlanta, Oct 2024", "date": "2024-10-31", "agenda": "", "organizers": "TBD", participants: ["GA"], to_improve: "-"}, 
     {"title": "Northeast CHI @ Boston, May 2024", "date": "2024-05-10", "agenda": "", "organizers": "Saiph Savage", participants: ["MA"], to_improve: "-"},
-    {"title": "Southeast CHI @ Atlanta, Apr 2024", "date": "2024-04-12", "agenda": "https://docs.google.com/document/d/18zNriqm-PyOKz6f7w0mEfnBxiIJhnfhAMwbCsEB9mOk/edit?usp=sharing", "organizers": "Camille Harris, Darley Sackitey, Grace Barkhuff, Raj Sanjay Shah, Shravika Mittal", participants: ["GA", "VA"], to_improve: "-"},
-    {"title": "Southeast CSCW @ Atlanta, Nov 2023", "date": "2023-11-17", "agenda": "https://docs.google.com/document/d/1oos9HkOsB2xTvXtNrH_2OXjo5ks41lcTBFy1toBosxI/edit?usp=sharing", "organizers": "Soya Park, Chinmay Kulkarni and Richmond Wong", participants: ["CA", "GA", "NC", "IL"], to_improve: "-"}, 
-    {"title": "Northesast CSCW @ NYC, Nov 2022", "date": "2022-11-31", "agenda": "https://docs.google.com/document/d/1PhpaJmWYQy96BmstJe0b0WlxJTt-uBfb4moLvtTKu1k/edit?usp=sharing", "organizers": "Rosanna Bellini, Andrés Monroy-Hernández and Jérémie Lumbroso", "participants": ["MA", "NY", "NJ", "PA", "GA", "NC"], to_improve: "While participants found the sessions were overall engaging and interesting, the nature of panel sessions sometimes unfairly distribute time between panelists. Chairs can ensure each panelist does not go over their assigned time. It might be also worth to  reduce the size of panelists per panel or try other forms of dissemination other than panel sessions."}]);
+    {"title": "Southeast CHI @ Atlanta, Apr 2024", "date": "2024-04-12", "agenda": "https://docs.google.com/document/d/18zNriqm-PyOKz6f7w0mEfnBxiIJhnfhAMwbCsEB9mOk/edit?usp=sharing", "organizers": "Camille Harris, Darley Sackitey, Grace Barkhuff, Raj Sanjay Shah, Shravika Mittal", participants: ["GA", "VA"], to_improve: "Focuses on deeper engagement through work-in-progress sessions, concise paper presentations by researchers, skill-sharing sessions, and structured paper discussions, alongside the standard welcome, ice breakers, and world café discussions, culminating in a town hall and optional social gathering."},
+    {"title": "Southeast CSCW @ Atlanta, Nov 2023", "date": "2023-11-17", "agenda": "https://docs.google.com/document/d/1oos9HkOsB2xTvXtNrH_2OXjo5ks41lcTBFy1toBosxI/edit?usp=sharing", "organizers": "Soya Park, Chinmay Kulkarni and Richmond Wong", participants: ["CA", "GA", "NC", "IL"], to_improve: "Offers a more intimate setting with reduced group sizes for discussions, incorporates short paper pitches from the latest conference, and maintains a similar structure of engaging activities including organizer welcomes, ice breakers, world café discussions, followed by a town hall and an optional social gathering."}, 
+    {"title": "Northesast CSCW @ NYC, Nov 2022", "date": "2022-11-31", "agenda": "https://docs.google.com/document/d/1PhpaJmWYQy96BmstJe0b0WlxJTt-uBfb4moLvtTKu1k/edit?usp=sharing", "organizers": "Rosanna Bellini, Andrés Monroy-Hernández and Jérémie Lumbroso", "participants": ["MA", "NY", "NJ", "PA", "GA", "NC"], to_improve: "The event features a series of engaging activities including organizer welcomes, ice breakers, world café discussions, multiple paper-presenters panels on their CSCW '22 papers, and ends with a town hall and an optional social gathering."}]);
   const [selectedEvent, setSelectedEvent] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -176,7 +177,7 @@ const App = () => {
             <Card title={event.title} extra={new Date().toISOString().slice(0, 10) <= event.date && <Tag color="magenta">Upcoming</Tag>} onClick={(e) => selectNewEvent(i)} className={i == selectedEvent ? "selected-event":""} style={{ marginBottom: "30px" }}>
               <p style={{color: "#999"}}>Organized by {event.organizers}</p>
               <p>{event.agenda && <a href={event.agenda} target="_blank" rel="noopener noreferrer">Agenda</a>}</p>
-              {new Date().toISOString().slice(0, 10) > event.date && <p>Things to improve: {event.to_improve}</p>}
+              {new Date().toISOString().slice(0, 10) > event.date && <p>{event.to_improve}</p>}
             </Card>
           )}
         </p>
