@@ -172,7 +172,7 @@ const App = () => {
             {"conferencing"}
           </span>
         </h1>
-        <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+        <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" style={{overflowY: "scroll", height: "500px"}}>
           {events.map((event, i) => 
             <Card title={event.title} extra={new Date().toISOString().slice(0, 10) <= event.date && <Tag color="magenta">Upcoming</Tag>} onClick={(e) => selectNewEvent(i)} className={i == selectedEvent ? "selected-event":""} style={{ marginBottom: "30px" }}>
               <p style={{color: "#999"}}>Organized by {event.organizers}</p>
